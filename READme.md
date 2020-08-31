@@ -12,8 +12,6 @@ Thanksgiving -- Nov 26, 2020
 ### Staff
 - Sarah Beth Tracy, Instructor
   - anthony@pdxcodeguild.com
-- Irron Williams, TA
-
 
 ## Python labs assigned
 
