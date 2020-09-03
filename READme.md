@@ -14,7 +14,10 @@ Thanksgiving -- Nov 26, 2020
   - sarah@pdxcodeguild.com
 
 ## Python labs assigned
--madlib(02)
+-(02)madlib
+-(03)grading
+-(04)magic 8 ball 
+-(05)emoticon generator
 
 
 ## Odds and Ends
