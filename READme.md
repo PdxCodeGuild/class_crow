@@ -24,7 +24,7 @@ Thanksgiving -- Nov 26, 2020
 - (09) unit converter
 - (10): tyler
 - (11): jesse
--(12): james
+- (12): james
 
 
 ## Odds and Ends
