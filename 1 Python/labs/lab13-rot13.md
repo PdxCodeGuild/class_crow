@@ -12,3 +12,6 @@ Write a program that prompts the user for a string, and encodes it with ROT13. F
 ## Version 2 ()
 
 Allow the user to input the amount of rotation used in the encryption / decryption.
+
+## Version 3 ()
+Allow the user to indicate the number of rotations they want to use for encryption.
