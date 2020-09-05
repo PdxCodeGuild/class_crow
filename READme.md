@@ -25,6 +25,9 @@ Thanksgiving -- Nov 26, 2020
 - (10): tyler
 - (11): jesse
 - (12): james
+- (13): rot 13
+- (14): pick6 
+
 
 
 ## Odds and Ends
