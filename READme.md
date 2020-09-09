@@ -27,6 +27,7 @@ Thanksgiving -- Nov 26, 2020
 - (12): james
 - (13): rot 13
 - (14): pick6 
+- (15): number to phrase
 
 
 
