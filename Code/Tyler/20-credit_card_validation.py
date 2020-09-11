@@ -17,52 +17,35 @@ def main():
     #reversing list
     userinputlist.reverse()
 
-    print(userinputlist)
 
-    #doing math and appending to list
-    count = 1
+    # doing math and appending to list
+    count = 0
     for item in userinputlist:
-        if count % 2 != 0:
+        if count % 2 == 0:
             item = item * 2
-            del userinputlist[count - 1]
-            userinputlist.insert(count - 1, item)
-        count += 1
-    count = 1
-    for item in userinputlist:
         if item > 9:
             item = item - 9
-            del userinputlist[count - 1]
-            userinputlist.insert(count - 1, item)
+            userinputlist.insert(count, item)
+            del userinputlist[count]
         count += 1
 
-    # count = 1
-    # for item in userinputlist:
-    #     if count % 2 != 0:
-    #         item = item * 2
-    #     if item > 9:
-    #         item = item - 9
-    #         del userinputlist[count - 1]
-    #         userinputlist.insert(count - 1, item)
-    #     count += 1
 
-
-    print(userinputlist)
 
     #getting sum of all digits
     sumVar = 0
     for item in userinputlist:
         sumVar += item
 
-    print(sumVar)
 
     #getting second digit of sum
     second_digit = str(sumVar)[1]
+    second_digit = int(second_digit)
 
-    print(second_digit)
-
+    #final print
     if second_digit == lastnum:
         print('Card is valid!')
     else:
         print('Card is invalid :(')
+
 
 main()
