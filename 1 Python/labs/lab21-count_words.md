@@ -22,6 +22,6 @@ for i in range(min(10, len(words))):  # print the top 10 words, or all of them, 
 
 Count how often each unique pair of words is used, then print the top 10 most common pairs with their counts.
 
-## Version 3 (optional)
+## Version 3
 
 Let the user enter a word, then show the words which most frequently follow it.
