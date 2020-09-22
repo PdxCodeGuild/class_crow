@@ -30,7 +30,6 @@ def average(data_list):
     
     grand_total = 0
     for item in data_list:
-        # print(item[1])
         grand_total += item[1]
     mean = round(grand_total/len(data_list),2)
 
@@ -44,16 +43,13 @@ def rainiest_day(data_list):
         if item[1] > rainiest_day_rainfall:
             rainiest_day = item[0]
             rainiest_day_rainfall = item[1]
-            # print(rainiest_day)
-            # print(rainiest_day_rainfall)
 
     the_rainiest = (rainiest_day, rainiest_day_rainfall)
     print(f'The rainiest day was {rainiest_day}, {rainiest_day_rainfall} inches fell that day')
     return the_rainiest
 
 def rainiest_year(data_list):
-    average_yearly = 0
-    year = ''
+
     year_list = []
     dict_1 = {}
 
@@ -66,25 +62,17 @@ def rainiest_year(data_list):
     
     for i in year_list:
         dict_1.setdefault(i[0],[]).append(i[1])
-        # dict_1.setdefault(i[0], 0) + i[1]
 
     highest_year = ''
     highest_average_yearly_rainfall = 0
     for key in dict_1:
-        # print('year', key)
-        # print('average yearly rainfall', sum(dict_1[key])/12)
         if sum(dict_1[key])/12 > highest_average_yearly_rainfall:
             highest_year = key
             highest_average_yearly_rainfall = sum(dict_1[key])/12
     print(f'The year {highest_year} had the highest average yearly rainfall with {round(highest_average_yearly_rainfall, 2)} inches on average')
-        
-        
-    # print(dict_1)
-   # have another value or dicitonary that you are adding i[1] 
-
 
 if __name__ == "__main__":
     load_data('https://or.water.usgs.gov/non-usgs/bes/mt_tabor.rain')
-    # average(load_data('https://or.water.usgs.gov/non-usgs/bes/mt_tabor.rain'))
-    # rainiest_day(load_data('https://or.water.usgs.gov/non-usgs/bes/mt_tabor.rain'))
+    average(load_data('https://or.water.usgs.gov/non-usgs/bes/mt_tabor.rain'))
+    rainiest_day(load_data('https://or.water.usgs.gov/non-usgs/bes/mt_tabor.rain'))
     rainiest_year(load_data('https://or.water.usgs.gov/non-usgs/bes/mt_tabor.rain'))
