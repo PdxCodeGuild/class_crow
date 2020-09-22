@@ -55,41 +55,32 @@ def rainiest_year(data_list):
     average_yearly = 0
     year = ''
     year_list = []
+    dict_1 = {}
 
     for item in data_list:
         date = datetime.strptime(item[0],'%d-%b-%Y')
-        # print(date.year)
         date = date.year
         rainfall = item[1]
         year_list.append((date, rainfall))
+
+    
+    for i in year_list:
+        dict_1.setdefault(i[0],[]).append(i[1])
+        # dict_1.setdefault(i[0], 0) + i[1]
+
+    highest_year = ''
+    highest_average_yearly_rainfall = 0
+    for key in dict_1:
+        # print('year', key)
+        # print('average yearly rainfall', sum(dict_1[key])/12)
+        if sum(dict_1[key])/12 > highest_average_yearly_rainfall:
+            highest_year = key
+            highest_average_yearly_rainfall = sum(dict_1[key])/12
+    print(f'The year {highest_year} had the highest average yearly rainfall with {round(highest_average_yearly_rainfall, 2)} inches on average')
         
-    for pair in year_list:
-        print(pair)
-    
-    for i in range(len(year_list)):
-        if year_list[i] == year_list[i-1]:
-             
-
-    #     counter = 0
-    #     sum = 0
-    
-    #     if date == date:
-    #         # print('whatup')
-    #         counter += 1
-    #         sum += item[1]
-    #         if sum/counter > average_yearly:
-    #             average_yearly = sum/counter
-    #             year = date
-    #             print(average_yearly)
-    #             print(year)
-    # print(average_yearly)
-    # print(year)
-
-
-    
-
-    
-
+        
+    # print(dict_1)
+   # have another value or dicitonary that you are adding i[1] 
 
 
 if __name__ == "__main__":
