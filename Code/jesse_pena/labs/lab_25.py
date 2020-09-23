@@ -9,19 +9,21 @@ class ATM:
 
     def deposit(self, balance, deposit_amount):
         self.balance += deposit_amount
-        self.transaction_list.append(f'You have deposited ${deposit_amount}')
+        self.transaction_list.append(f'You deposited ${deposit_amount}')
         return self.balance
 
     def check_withdrawal(self, balance, withdrawal_amount):
         new_balance = self.balance-withdrawal_amount
         if new_balance > 0:
+            print('You are safe to withdraw')
             return True
         else:
+            print('You will overdraw your account')
             return False
 
     def withdrawal(self, balance, withdrawal_amount):
         self.balance -= withdrawal_amount
-        self.transaction_list.append(f'You have withdrawn ${withdrawal_amount}')
+        self.transaction_list.append(f'You withdrew ${withdrawal_amount}')
         return self.balance
 
     def calc_interest(self, balance, interest_rate = 0.1):
@@ -30,10 +32,10 @@ class ATM:
         return account_interest
 
     def print_transactions(self):
-        # counter = 1
-        # for transaction in self.transaction_list:
-        #     print (f'{transaction}')
-        print(self.transaction_list)
+        counter = 0
+        for transaction in self.transaction_list:
+            counter += 1
+            print (f'{counter}. {transaction}')
         return self.transaction_list
 
 def interact():
@@ -43,17 +45,19 @@ def interact():
 
     while True:
         user_input = input('what would you like to do (deposit, withdraw, check balance, history, done)? ')
-        
 
         if user_input == 'deposit':
             deposit_amount = int(input('How much are you depositing? '))
             user_account.deposit(user_account.balance, deposit_amount)
-            # user_account.print_transactions()
             
         if user_input == 'withdraw':
             withdrawal_amount = int(input('How much are you withdrawing? '))
-            user_account.withdrawal(user_account.balance, withdrawal_amount)
-            # user_account.print_transactions()
+            user_account.check_withdrawal(user_account.balance, withdrawal_amount)
+            will_continue = input('Would you like to continue with the withdrawal? y/n? ' )
+            if will_continue == 'y':
+                user_account.withdrawal(user_account.balance, withdrawal_amount)
+            if will_continue == 'n':
+                print('balance', user_account.balance)
 
         if user_input == 'check balance':
             print('balance', user_account.balance)
