@@ -1,6 +1,7 @@
 import requests
 import csv
 import threading
+import plotly.express as px
 
 def load():
 
@@ -37,6 +38,10 @@ def main():
 
     thread.join()
 
-    print(highest_rain_date(filelist))
+    # print(filelist)
+    # print(highest_rain_date(filelist))
+    # for item in filelist:
+    fig = px.bar(filelist,x=0,y=1)
+    fig.show()
 
 main()
