@@ -14,7 +14,8 @@ class Board:
     # placing the piece
     # checking for winner
         if self.winner != None: 
-            raise RunTimeError(f'Player ${self.winner} has already won')
+            pass
+            # raise RunTimeError(f'Player ${self.winner} has already won')
         if symbol != self.piece_x and symbol !=self.piece_o:
             raise ValueError('Symbol must be x or 0')
         self.board[row][column] = symbol
@@ -38,13 +39,13 @@ class Board:
                     self.winner = player
                     return True
             # check the diagonals
-            # diagonals = [
-            #     []
-            # ]
-            # for diagonal in diagonals:
-            #     if self.check_line(diagonal, player):
-            #         self.winner = player
-            #         return True
+            diags = []
+            for i in range(len(self.board)):
+                diags.append(self.board[i][i])
+            if diags.count(diags[0]) == len(diags) and diags[0] != 0:
+                self.winner = player
+                return True
+
         return False
     def __str__(self):
         return '\n'.join(' '.join(row) for row in self.board)
@@ -61,20 +62,18 @@ print(newBoard)
 newBoard.take_turn('o', 0, 0)
 print(newBoard)
 
-newBoard.take_turn('o', 1, 0)
+newBoard.take_turn('o', 1, 1)
 print(newBoard)
 
-newBoard.take_turn('o', 2, 0)
+newBoard.take_turn('o', 2, 2)
 print(newBoard)
 
-newBoard.take_turn('x', 2, 2)
+newBoard.take_turn('o', 2, 2)
 print(newBoard)
 
 
 gameOne = Board()
 gameTwo = Board()
-
-if gameTwo.winner == gameOne.winner:
 
 print('__________________')
 print(newBoard)
