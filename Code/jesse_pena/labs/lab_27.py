@@ -48,48 +48,12 @@ class Game():
         self.board[new_game.get_height(position)][position] = player
         
 
-    def calc_winner(self):
-        '''
-        returns true if a match (four in a row) is found
+    # def calc_winner(self):
+    #     '''
+    #     returns true if a match (four in a row) is found
 
-        '''
-
-        x_check_winner = []
-        y_check_winner = []
-
-        for row in self.board:
-            for i in range(len(row)):
-                column = row.index(row[i])
-
-                if row[i][column] == 'x':
-                    x_check_winner.append(row[i])
-
-                elif row[i][column] == 'o':
-                    y_check_winner.append(row[i])
-        print(x_check_winner)
-        print(y_check_winner)
-                    
-
-
-
-        # x_check_winner = []
-        # y_check_winner = []
-
-        # for row in self.board:
-        #     for i in range(len(row)):
-        #         column = row.index(row[i])
-        #         if row[i] == 'x':
-        #             # print(row.index(row[i]))
-        #             x_check_winner.append((row[i], column))
-        #             # x_check_winner.append(row[i])
-        #             y_check_winner = []
-        #             print(x_check_winner)
-        #         elif row[i] == 'o':
-        #             # print(row.index(row[i]))
-                    
-        #             y_check_winner.append(row[i])
-        #             x_check_winner = []
-        #             print(y_check_winner)
+    #     '''
+    #     pass
 
     # def is_full(self):
     #     pass
@@ -99,34 +63,34 @@ class Game():
 
 
 # ************************************* FILE GAME ***********************
-# if __name__ == "__main__":
-    # new_game = Game()
-    # f = open("/home/jpchato/class_crow/Code/jesse_pena/connect-four-moves.txt", "r")
-    # counter = 0
-    # for line in f:
-    #     counter += 1
-    #     if counter % 2 == 0:
-    #         new_game.move('x', int(line) - 1 )
-    #         for line in new_game.board:
-    #             print(line)
-    #         print('*'*100)
-    #     else:
-    #         new_game.move('o', int(line) - 1)
-    #         for line in new_game.board:
-    #             print(line)
-    #         print('*'*100)
+if __name__ == "__main__":
+    new_game = Game()
+    f = open("/home/jpchato/class_crow/Code/jesse_pena/connect-four-moves.txt", "r")
+    counter = 0
+    for line in f:
+        counter += 1
+        if counter % 2 == 0:
+            new_game.move('x', int(line) - 1 )
+            for line in new_game.board:
+                print(line)
+            print('*'*100)
+        else:
+            new_game.move('o', int(line) - 1)
+            for line in new_game.board:
+                print(line)
+            print('*'*100)
 # ********************************* FILE GAME *********************
 
-new_game = Game()
-new_game.move('x', 1 )
-new_game.move('o', 0)
-new_game.move('x', 1)
-new_game.move('o', 0)
-new_game.move('x', 1)
-new_game.move('o', 0)
-new_game.move('x', 1)
+# new_game = Game()
+# new_game.move('x', 1 )
+# new_game.move('o', 0)
+# new_game.move('x', 2)
+# new_game.move('o', 0)
+# new_game.move('x', 3)
+# new_game.move('o', 0)
+# new_game.move('x', 4)
 # for line in new_game.board:
 #     print(line)
-new_game.get_height(1)
-new_game.calc_winner()
+# new_game.get_height(1)
+# new_game.calc_winner()
 
