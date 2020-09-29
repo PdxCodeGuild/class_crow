@@ -156,4 +156,12 @@ async def avg_cs(ctx, summoner_name):
     
     await ctx.send(f'{summoner_name} \n victory: {avg_victory_cs} \n defeat: {avg_defeat_cs}')
 
+# @bot.command(name='joke', help='api call to joke library')
+# async def joke(ctx):
+#     response = requests.get('https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist')
+#     _object = response.json()
+#     setup = _object['setup']
+#     delivery = _object['delivery']
+#     await ctx.send(setup, delivery)
+
 bot.run(TOKEN)

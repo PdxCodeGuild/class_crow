@@ -148,3 +148,15 @@ def youtube_search():
     response = (f'https://www.youtube.com/results?search_query={search_query}')
     # response =(f'<iframe width="722" height="406" src="https://www.youtube.com/embed/{search_query}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
     print(response)
+
+def api_test():
+    response = requests.get('https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist')
+    # print(response.json())
+    _object = response.json()
+    setup = _object['setup']
+    delivery = _object['delivery']
+    print(delivery)
+    return setup, delivery
+
+
+api_test()
