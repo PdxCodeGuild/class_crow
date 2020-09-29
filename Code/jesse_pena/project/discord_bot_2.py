@@ -72,19 +72,15 @@ async def on_error(event, *args, **kwargs):
 
 @bot.command(name='opgg', help='Looks up user\'s op.gg')
 async def op_gg(ctx, summoner_name):
-    # champ_lookup(summoner_name)
-    # print(summoner_name)
 
     response = requests.get(f'https://na.op.gg/summoner/userName={summoner_name}')
-    # print(response)
     soup = BeautifulSoup(response.content, 'html.parser')
-    print(soup.get_text())
+
 
     game_result = soup.find_all('div', class_='GameResult')
     game_result_list = []
 
     for game in game_result:
-        # print(game.get_text().strip())
         game_result_list.append(game.get_text().strip())
 
     #### parent class of champ_name is GameSettingInfo
@@ -93,25 +89,79 @@ async def op_gg(ctx, summoner_name):
     champ_name_list = []
 
     for champ in champ_name:
-        # print(champ.get_text().strip())
         champ_name_list.append(champ.get_text().strip())
 
     cs_score = game_setting_info.findChildren(class_='CS')
     cs_list = []
+
     for cs in cs_score:
-        # print(cs.get_text().strip())
         cs = cs.get_text().strip()
-        # print(cs)
         if cs[-1] == 'S':
             cs_list.append(cs)
-    # print(cs_list)
 
     merged_list = tuple(zip(game_result_list, champ_name_list, cs_list))
-    # print(merged_list)
 
-    for item in merged_list:
-        await ctx.send(item)
+    await ctx.send(merged_list)
 
-    # await ctx.send(merged_list)
+@bot.command(name='avg_cs', help='Looks up user\'s avg cs by defeat or victory')
+async def avg_cs(ctx, summoner_name):
+
+    response = requests.get('https://na.op.gg/summoner/userName=j aldo')
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    game_result = soup.find_all('div', class_='GameResult')
+    game_result_list = []
+
+    for game in game_result:
+        game_result_list.append(game.get_text().strip())
+
+    #### parent class of champ_name is GameSettingInfo
+    game_setting_info = soup.find('div', class_ = 'GameItemList')
+
+    cs_score = game_setting_info.findChildren(class_='CS')
+    cs_list = []
+    
+    for cs in cs_score:
+        cs = cs.get_text().strip()
+        
+        if cs[-1] == 'S':
+            cs_list.append(cs)
+    
+
+    avg_cs_list = tuple(zip(game_result_list, cs_list))
+
+    # tallies total cs depending on result
+    victory_cs_tally = 0
+    defeat_cs_tally = 0
+
+    # counts instances of victory/defeat
+    defeat_counter = 0
+    victory_counter = 0
+
+    for i in range(len(avg_cs_list)):
+        if avg_cs_list[i][0] == 'Defeat':
+            defeat_counter += 1
+            defeat_cs = avg_cs_list[i][1]     
+            defeat_cs = int(defeat_cs[0:3])
+            defeat_cs_tally += defeat_cs
+     
+        if avg_cs_list[i][0] == 'Victory':
+            victory_counter += 1
+            victory_cs = avg_cs_list[i][1] 
+            victory_cs = int(victory_cs[0:3])
+            victory_cs_tally += victory_cs
+
+    avg_defeat_cs = defeat_cs_tally/defeat_counter
+    avg_victory_cs = victory_cs_tally/victory_counter
+    
+    await ctx.send(f'{summoner_name} \n victory: {avg_victory_cs} \n defeat: {avg_defeat_cs}')
+
+# @bot.command(name='joke', help='api call to joke library')
+# async def joke(ctx):
+#     response = requests.get('https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist')
+#     _object = response.json()
+#     setup = _object['setup']
+#     delivery = _object['delivery']
+#     await ctx.send(setup, delivery)
 
 bot.run(TOKEN)
