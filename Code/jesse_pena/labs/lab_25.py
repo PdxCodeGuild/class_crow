@@ -1,4 +1,4 @@
-class ATM:
+class ATM(object):
     def __init__(self, name = '', balance = 0, transaction_list = []):
         self.name = name 
         self.balance = balance
@@ -7,7 +7,7 @@ class ATM:
     def check_balance(self, name):
         return self.balance
 
-    def deposit(self, balance, deposit_amount):
+    def deposit(self, deposit_amount):
         self.balance += deposit_amount
         self.transaction_list.append(f'You deposited ${deposit_amount}')
         return self.balance
@@ -48,7 +48,7 @@ def interact():
 
         if user_input == 'deposit':
             deposit_amount = int(input('How much are you depositing? '))
-            user_account.deposit(user_account.balance, deposit_amount)
+            user_account.deposit(deposit_amount)
             
         if user_input == 'withdraw':
             withdrawal_amount = int(input('How much are you withdrawing? '))

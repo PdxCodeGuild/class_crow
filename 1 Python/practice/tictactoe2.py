@@ -28,23 +28,20 @@ class Board:
     def check_for_winner(self):
         for player in [self.piece_x, self.piece_o]:
             # check row three in a row
-            for row in self.board:
-                if self.check_line(row, player):
-                    self.winner = player
-                    return True
-
+                for i in range(3):
+                    row = self.board[i]
+                    if all(item==row[0] and item != '-' for item in row):
+                        self.winner = player
             # check for three in a column
-            for column in zip(*self.board):
-                if self.check_line(column, player):
-                    self.winner = player
-                    return True
+                col = [self.board[j][i] for j in range(3)]
+                if all(item == col[0] and item != '-' for item in col):
+                    self.winner= player
             # check the diagonals
-            diags = []
-            for i in range(len(self.board)):
-                diags.append(self.board[i][i])
-            if diags.count(diags[0]) == len(diags) and diags[0] != 0:
-                self.winner = player
-                return True
+            if (self.board[2][0] == self.board[1][1] == self.board[2][2] and self.board[0][0] != '-'):
+                self.winner= player
+            if (self.board[0][0] == self.board[1][1] == self.board[2][2] and self.board[2][0] != '-'):
+                self.winner= player
+                     
 
         return False
     def __str__(self):
