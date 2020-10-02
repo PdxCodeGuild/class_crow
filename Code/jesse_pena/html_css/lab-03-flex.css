@@ -30,6 +30,7 @@ header {
     margin: 10px;
     padding: 10px;
     border: 10px;
+    font-weight: bold;
 }
 
 form {
@@ -42,6 +43,12 @@ form {
 span {
     font-weight: bold;
     align-self: center;
+}
+
+label {
+    font-family: monospace;
+    font-size: larger;
+    font-weight: bold;
 }
 
 section {
@@ -57,3 +64,38 @@ nav ul{
     display: flex;
     justify-content: space-around;
 }
+
+button {
+    height: 50px;
+    width: 200px;
+    border-radius: 100px;
+    background-color: burlywood;
+    font-family: fantasy;
+    color: brown
+}
+
+a:link {
+    color: teal;
+    font-family: fantasy;
+}
+
+a:visited {
+    color: teal;
+    font-family: fantasy;
+}
+
+ul{
+    list-style: none;
+    margin: 0 2px;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: xx-large;
+    color: khaki
+}
+
