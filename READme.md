@@ -1,5 +1,5 @@
 # 20200831-Python-FullStack-Night
-Repo for the PDX Code Guild Python Full Stack day course starting 20 July 2020.
+Repo for the PDX Code Guild Python Full Stack day course starting 31 Aug 2020.
 
 Class is held from **August 31th - Jan 22nd, 2021**
 M-F 6:00 pm - 9:36 pm

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burrito</title>
+    <!-- https://pipedream.com/sources/dc_4OuY23 -->
+    <link rel="stylesheet" href="lab-05.css">
+    
+</head>
+
+    
+<body>
+<nav>
+<img src="/html_css/lab-05-assets/cilantro.PNG" alt="cilantro">
+<img src="/html_css/lab-05-assets/onion.PNG" alt="onion">
+<img src="/html_css/lab-05-assets/salsa.PNG" alt="salsa">
+<img src="/html_css/lab-05-assets/chililime.PNG" alt="chili and lime">
+</nav>
+<header>BURRITO TIME</header>
+<form action='https://12c09389867e4d690006f9d11c73bcee.m.pipedream.net' method='post'>
+
+    <fieldset>
+        <h4>Tortilla</h4>
+        <input type="radio" id='white flour' name ='tortilla' value='white flour'>
+        <label for="white flour">White Flour</label>
+        <input type="radio" id='wheat flour' name ='tortilla' value='wheat flour'>
+        <label for="wheat flour">Wheat Flour</label>
+        <input type="radio" id='corn' name ='tortilla' value='corn'>
+        <label for="corn">Corn</label>
+        <input type="radio" id='spinach' name ='tortilla' value='spinach'>
+        <label for="spinach">Spinach</label>
+    </fieldset>
+
+    <fieldset>
+        <h4>Rice</h4>
+        <input type="radio" id='white rice' name ='rice' value='white rice'>
+        <label for="white rice">White Rice</label>
+        <input type="radio" id='brown rice' name ='rice' value='brown rice'>
+        <label for="brown rice">Brown Rice</label>
+    </fieldset>
+        
+    <fieldset>
+        <h4>Beans</h4>
+        <input type="radio" id='black beans' name ='beans' value='black beans'>
+        <label for="black beans">Black Beans</label>
+        <input type="radio" id='pinto beans' name ='beans' value='pinto beans'>
+        <label for="pinto beans">Pinto Beans</label>
+    </fieldset>
+
+    <fieldset>
+        <h4>Protein</h4>
+        <input type="radio" id='carnitas' name ='protein' value='carnitas'>
+        <label for="carnitas">carnitas</label>
+        <input type="radio" id='chicken' name ='protein' value='chicken'>
+        <label for="chicken">chicken</label>
+        <input type="radio" id='sofritas' name ='protein' value='sofritas'>
+        <label for="sofritas">sofritas</label>
+        <input type="radio" id='none' name ='protein' value='none'>
+        <label for="none">none</label>
+    </fieldset>
+
+    <fieldset>
+        <h4>Additional Ingredients</h4>
+        <input type="checkbox" name="cheese" id="cheese">
+        <label for="cheese">cheese</label>
+        <input type="checkbox" name="sour cream" id="sour cream">
+        <label for="sour cream">sour cream</label>
+    </fieldset>
+
+    <fieldset>
+        <h4>Personal Info</h4>
+        <label for="name" >username</label><br>
+        <input type="text" name='name' required minlength="6" placeholder='username: 6 character min'><br>
+        <label for="name" >password</label><br>
+        <input type="text" name='password' required minlength="6" placeholder='As1!1234' pattern='^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$'><br>
+        <label for="password" >first name</label><br>
+        <input type="text" name='first name' required minlength="3" placeholder='first name: 3 character min'><br>
+        <label for="first name" >last name</label><br>
+        <input type="text" name='last name' required minlength="3" placeholder='last name: 3 character min'><br>
+        <label for="email">email</label><br>
+        <input type="text" name='email'  placeholder='email' pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'><br>
+        <!-- email regex reference: https://regexr.com/3e48o -->
+        <label for="phone number">phone number</label><br>
+        <input type="text" name='phone number'  placeholder='phone number' pattern='^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$'><br>
+        <!-- phone number regex reference: https://regexr.com/3c53v -->
+        <label for="date of birth">date of birth</label><br>
+        <input type="text" name='date of birth'  placeholder='date of birth mm/dd/yyyy' pattern='^(?:0[1-9]|[12]\d|3[01])([\/.-])(?:0[1-9]|1[012])\1(?:19|20)\d\d$'><br>
+        <!-- dob regex reference: https://stackoverflow.com/a/22160361/14263621 -->
+        <label for="social security number">social security number</label><br>
+        <input type="text" name='social security number'  placeholder='xxx-xx-xxxx' pattern="^\d{3}-\d{2}-\d{4}$"><br>
+        <!-- ss# regex reference: https://regexlib.com/Search.aspx?k=ssn&AspxAutoDetectCookieSupport=1-->
+        <label for="street">street</label><br>
+        <input type="text" name='street'  placeholder='123 happy st' pattern="^\d+\s[A-z]+\s[A-z]+"><br>
+        <!-- street address regex reference: https://www.regexpal.com/93592 -->
+        <label for="city, state, zip">city state zip</label><br>
+        <input type="text" name='city state zip'  placeholder='city, ST, 12345' pattern="\w+, [A-Z]{2}, \d{5}"><br>   
+    </fieldset>
+
+    <input id='submit' type="submit" value="submit">
+</form>
+</body>
+
+</html>
