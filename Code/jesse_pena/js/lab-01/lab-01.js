@@ -20,11 +20,21 @@ function plusMinus (score) {
         symbol = '+'
     } else if (modulus >= 3) {
         symbol = ''
-    } else if (modulus > 3) {
+    } else if (modulus < 3) {
         symbol = '-'
     }
     return symbol
 }
 
-let total_grade = grading(78) + plusMinus(78)
-console.log(total_grade)
+
+function totalGrade (grade, symbol) {
+    if (grade != 'F') {
+        console.log(grade + symbol)
+        return grade + symbol
+    } else {
+        console.log(grade)
+        return grade
+    }
+}
+
+totalGrade(grading(69), plusMinus(69))

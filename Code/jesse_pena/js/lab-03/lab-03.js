@@ -11,4 +11,11 @@ function randomEmoticonGenerator () {
     return face
 }
 
+function writeToDOM (face) {
+    let addHTML = document.createElement('p')
+    let anchorHTML = document.querySelector('body')
+    addHTML.textContent = face
+    anchorHTML.appendChild(addHTML)
+}
 randomEmoticonGenerator()
+// writeToDOM(randomEmoticonGenerator())
