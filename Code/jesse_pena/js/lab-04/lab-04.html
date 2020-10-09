@@ -5,16 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lab-04</title>
     <script src='/js/lab-04/lab-04.js'></script>
+    <link rel="stylesheet" href="/js/lab-04/lab-04.css">
 </head>
 <body>
-    <h4>To Do List</h4>
-    <input type='text' id='userInput' placeholder="item to add">
-    <input type="submit" onclick="manipulateDom()">
+    <h1>Create Your Own to do List</h1>
+    <div id='inputSubmit'>
+        <input type='text' id='userInput' placeholder="item to add">
+        <input type="submit" onclick="manipulateDom()">
+    </div>
 
-    <ul id='to-do'>
-    </ul>
+    <div id='toDo'>
+        <h4>To-Do</h4>
+        <ul id='to-do'>
+        </ul>
+    </div>
 
-    <ul id='done'>
-    </ul>
+    <div id='completeItems'>
+        <h4>Complete Items</h4>
+        <ul id='done'>
+        </ul>
+        <input id = 'clear-list' type="submit" onclick="clearList()" value='Clear List'>
+    </div>
 </body>
 </html>
