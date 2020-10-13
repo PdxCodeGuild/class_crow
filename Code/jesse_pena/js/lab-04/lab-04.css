@@ -5,7 +5,6 @@
 body {
     background-color: orange;
     display: flex;
-    /* flex-direction: column; */
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -22,18 +21,18 @@ h1 {
 }
 
 #completeItems {
-    display: flex;
+    text-align: center;
     background-color: purple;
     width: 50%;
     color: white;
-    height: 500px;
+    
+    
 }
 
 #toDo {
     background-color: limegreen;
     width: 50%;
     color: black;
-    height: 500px;
 }
 
 h4 {
@@ -52,16 +51,7 @@ button {
 }
 
 #clear-list {
-    display: flex;
     background-color: black;
     color: white;
-    /* width: 100%; */
     align-self: flex-end
-    
-    
-
 }
-
-/* remove items from complete items, clear out list
-on double click
-change up user features */
