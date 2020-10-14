@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redictor</title>
+    <style>
+        #countdown {
+            text-align: center;
+            width: 100%;
+            font-size: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Random Redirect!</h1>
+    <div id="countdown"></div>
+    <button onclick="Redirect()">Click to Redirect</button>
+    <script>
+        let counter = 0;
+        let countdown = document.querySelector('#countdown');
+
+        let Redirect = () => {
+            // should redirect to webpage
+            setInterval(function() {
+            let urls = ['https://github.com/',
+                        'https://www.reddit.com/',
+                        'https://www.google.com/'
+            ]
+            let index = Math.floor(Math.random()*urls.length);
+            countdown.innerText = counter
+            if (counter === 0) {
+                window.location = urls[index]
+            }
+            counter -= 1
+            }, 1000)
+        }
+
+// option to use setTimeout, runs only one time 
+// must put inside anonymous function to prevent too many renders
+        //     let urls = ['https://github.com/',
+        //                 'https://www.reddit.com/',
+        //                 'https://www.google.com/'
+        //     ]    
+        //     let index = Math.floor(Math.random()*urls.length);
+        //     while(counter < 5) {
+        //             (function timer(counter) {
+        //             setTimeout(function() {
+        //             countdown.innerText = counter; 
+        //             }, 1000 * counter)
+        //         })(counter += 1)             
+        //     }
+        // }
+    </script>
+</body>
+</html>
