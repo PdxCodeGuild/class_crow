@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        #clock_div {
+            font-size:30px;
+            margin:20px;
+        }
+        #button_div button {
+            background-color: transparent;
+            border: none;
+            display: inline-block;
+        }
+        #button_div button:disabled {
+            color:tomato;
+        }
+        #button_div button:hover {
+            color:goldenrod;
+        }
+        #button_div button:active:enabled {
+            color:turquoise;
+        }
+        .done {
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <div id="button_div">
+        <button id="button_clock">[clock]</button>
+        <button id="button_stopwatch">[stopwatch]</button>
+        <button id="button_countdown">[countdown]</button>
+    </div>
+    <div id="stopwatch_div">
+        <div id="view_stopwatch"></div>
+        <button id="bt_start_stopwatch">start</button>
+        <button id="bt_pause_stopwatch">pause</button>
+        <button id="bt_resume_stopwatch">resume</button>
+        <button id="bt_stop_stopwatch">stop</button>
+    </div>
+    <div id="clock_div"></div>
+    <div id="countdown_div">
+        <div id="view_countdown"></div>
+        <input id="input_countdown" type="number" placeholder="5"/>
+        <button id=bt_start_countdown>start</button>
+    </div>
+
+    <script src="clock.js"></script>
+</body>
+</html>
