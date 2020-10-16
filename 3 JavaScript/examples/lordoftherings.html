@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1> LORD OF THE RINGS STUFF</h1>
+    <h3>one character, who is it??</h3>
+    <div id="characters"></div>
+    <script>
+
+        //do a request to a server to get your token 
+
+        let url = 'https://the-one-api.dev/v2/character/5cd99d4bde30eff6ebccfbbe'
+        axios.get(url, {
+            headers: {
+                'Authorization': `Bearer "${myKey}"`
+            }
+        })
+        .then(response => {
+            initial_data = response.request.response;
+            parse_data = JSON.parse(initial_data)
+            data = parse_data.docs[0]
+            console.log(data);
+            charName = document.createElement('h4');
+            charName.innerText = data.name;
+            wiki_link = document.createElement('a')
+            wiki_link.innerText = "visit their wiki!"
+            wiki_link.href = data.wikiUrl
+
+            characterContainer = document.getElementById('characters');
+            characterContainer.appendChild(charName);
+            characterContainer.appendChild(wiki_link)
+            })
+
+    </script>
+</body>
+</html>
