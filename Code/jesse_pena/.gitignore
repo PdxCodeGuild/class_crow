@@ -256,3 +256,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+/home/jpchato/class_crow/Code/jesse_pena/secrets.js
