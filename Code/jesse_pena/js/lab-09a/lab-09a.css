@@ -1,1 +1,6 @@
-#mapid { height: 500px; }
+#mapid { height: 600px; }
+
+header {
+    text-align: center;
+    font-size: xx-large;
+}
