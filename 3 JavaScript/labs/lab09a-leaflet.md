@@ -15,6 +15,3 @@ You need to:
 
 # version 2: make it pretty
 make it pretty using your choice of either hand-written CSS or a CSS framework.
-
-reference image:
-![alt text](./example.png "Logo Title Text 1")
