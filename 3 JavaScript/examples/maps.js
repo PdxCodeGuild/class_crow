@@ -22,23 +22,17 @@ axios.get(url)
 
         // create card for each person 
 
-    //     let newCard = document.createElement('li');
-    //     document.getElementById('info').innerHTML = `
-    //     <div class="card">
-    //         <div class="card-body">
-    //         <h5 class="card-title">${person.name}</h5>
-    //         <li id="location">lat: ${person.address.geo.lat} long: ${person.address.geo.lng}</li>
-    //         <li id="location"> ${person.address.city}</li>
-    //         </div>
-    //     </div> 
-    // `;
-        // let cardList = document.getElementById('cards')
-        // document.getElementById('information').appendChild(newCard)
-        // create a new li element containing the user's name, username, and email address
-        //  let new_li = document.createElement('li')
-        //  new_li.innerText = `Name: ${person.name}, Username: ${person.username}, Email: ${person.email}`;
-
-        // document.getElementById('info-list').append(new_li);
+        let newCard = document.createElement('li');
+        newCard.innerHTML = `
+        <div class="card">
+            <div class="card-body">
+            <h5 class="card-title">${person.name}</h5>
+            <li id="location">lat: ${person.address.geo.lat} long: ${person.address.geo.lng}</li>
+            <li id="location"> ${person.address.city}</li>
+            </div>
+        </div> 
+    `;
+        document.querySelector('#cards').append(newCard);
 
     }    
   })
