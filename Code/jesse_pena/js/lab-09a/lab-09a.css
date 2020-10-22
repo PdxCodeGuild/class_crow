@@ -4,3 +4,8 @@ header {
     text-align: center;
     font-size: xx-large;
 }
+
+html {
+    background-color: black;
+    color: white;
+}
