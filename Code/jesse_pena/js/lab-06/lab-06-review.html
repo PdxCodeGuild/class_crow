@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock_div {
+            font-size: 30px;
+            margin: 20px;
+        }
+        #button_div button{
+            background: transparent;
+            border: none;
+            display: inline-block;
+        }
+        #butt_div button:disabled{
+            color: wheat;
+        }
+        .done {
+            background-color: tomato;
+        };
+    </style>
+</head>
+<body>
+    <div id='button_div'>
+        <button id='button_clock'>[clock]</button>
+        <button id='button_stopwatch'>[stopwatch]</button>
+        <button id='countdown_button'>[countdown]</button>
+    </div>
+    <div id='stopwatch_div'>
+        <div id='view_stopwatch'></div>
+        <button id = 'bt_start_stopwatch'>start</button>
+        <button id = 'bt_pause_stopwatch'>pause</button>
+        <button id = 'bt_resume_stopwatch'>resume</button>
+        <button id = 'bt_stop_stopwatch'>stop</button>
+    </div>
+        
+    <div id='clock_div'></div>
+    <div id='countdown_div'>
+        <div id='view_countdown'></div>
+        <input type="number" id='input_countdown' placeholder="5">
+        <button id='bt_start_countdown'>start</button>
+        <button id=''>stop</button>
+        <button>resume</button>
+    </div>
+    <script src="/js/lab-06/lab-06-review.js"></script>
+</body>
+</html>
