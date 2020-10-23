@@ -21,6 +21,10 @@ axios.get('https://jsonplaceholder.typicode.com/users')
         // console.log(response.data[0].name)
         // console.log((response.data[0].address.geo))
         let users = response.data
+        let header = document.createElement('header')
+        let headerText = document.createTextNode('Names and Numbers')
+        header.appendChild(headerText)
+        anchor.append(header)
         
         console.log(users)
         users.forEach(element => {
@@ -31,7 +35,7 @@ axios.get('https://jsonplaceholder.typicode.com/users')
             // console.log(element.name)
             // L.marker([lat, lng]).addTo(mymap);
             L.marker([lat, lng]).addTo(mymap).bindPopup('name: ' + element.name + '<br>' + 'city: ' + element.address.city).openPopup();
-            let newContent = document.createTextNode(element.name + ': ' + element.phone)
+            let newContent = document.createTextNode(element.name + ', phone: ' + element.phone + ', email: ' + element.email)
             anchor.appendChild(newContent)
             anchor.appendChild(br)
             // console.log(element.address.geo)
