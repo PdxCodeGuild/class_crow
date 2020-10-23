@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/js/lab-09b/lab-09b.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Quotes</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+</head>
+<body>
+    <div id='randomQuote'>
+        
+        {{ info }}
+        
+    </div>
+    
+    
+    <div id='quotesHere'>
+        <input type='text' v-model="query" placeholder='search' v-on:keyup.enter=update()>
+        <!-- <button v-on:click='update()'>Get Quotes</button> -->
+        <ol>
+            <li v-for='quote in quotes'>
+                {{ quote.body }}
+            </li>
+            <!-- {{ quotes }} -->
+        </ol>
+    </div>
+    <script src="/js/lab-09b/lab-09b.js"></script>
+</body>
+</html>
