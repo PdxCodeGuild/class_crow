@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id='app'>
+        <input v-model="filter" type="text">
+        <button v-on:click="getQuotes()">Get Quotes</button>
+        <div id="user-quote-container">
+
+        </div>
+        <div id="quote-container">
+            <ul>
+                <li v-for="quote in quotes">{{ quote.body }} --{{ quote.author }}</li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="secrets.js"></script>
+    <script src="quotesVUE.js"></script>
+</body>
+</html>
