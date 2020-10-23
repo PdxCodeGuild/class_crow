@@ -10,6 +10,7 @@
     
 </head>
 <body>
+    <header> Quotes </header>
     <div id='randomQuote'>
         
         {{ info }}
@@ -20,9 +21,9 @@
     <div id='quotesHere'>
         <input type='text' v-model="query" placeholder='search' v-on:keyup.enter=update()>
         <!-- <button v-on:click='update()'>Get Quotes</button> -->
-        <ol>
+        <ol id = 'styleMe'>
             <li v-for='quote in quotes'>
-                {{ quote.body }}
+                {{ quote.body }} - {{ quote.author }}
             </li>
             <!-- {{ quotes }} -->
         </ol>

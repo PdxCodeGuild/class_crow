@@ -2,3 +2,19 @@ html {
     background-color: black;
     color:lightslategrey;
 }
+
+header {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+#randomQuote {
+    text-align: center;
+    color: yellow;
+}
+
+#styleMe {
+    background-color: lightblue;
+    color:black;
+}
