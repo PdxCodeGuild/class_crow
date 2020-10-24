@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab 12</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="/js/lab-12/lab-12.css">
+</head>
+<body>
+    <div id='toDoList'>
+        <input type="text" placeholder="add to list" v-model='addToList' v-on:keyup.enter=addToDo()>
+        <ul>
+            <li  v-for='item in itemList'>
+                {{ item }}
+                <button v-on:click=removeToDo(item)>remove</button>
+                <button class='initial' v-bind:class='isComplete'type='checkbox' v-on:click=markDone(item)>complete</button>
+                
+            </li>
+        </ul>
+    </div>
+    <script src="/js/lab-12/lab-12.js"></script>
+</body>
+</html>
