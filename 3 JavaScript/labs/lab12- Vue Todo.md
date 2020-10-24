@@ -44,15 +44,16 @@ Example: `index.html`
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Todo List</title>
     <!-- Add your styles here! -->
-    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="/css/site.css" />    
+ <!-- Include Vue from a CDN of your choice, I chose unpkg -->
+    <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
     <div id="app">
         {{ message }}
     </div>
 
-    <!-- Include Vue from a CDN of your choice, I chose unpkg -->
-    <script src="https://unpkg.com/vue"></script>
+
     <!-- Include your code here... -->
     <script src="/js/site.js"></script>
 </body>
