@@ -4,8 +4,11 @@ let toDoList = new Vue({
         itemList: [
             
         ],
+        completedList: [
+        ],
         addToList: '',
-        isComplete: true
+        strikeThrough: 'line-through'
+        
     },
     methods: {
         addToDo: function(){
@@ -17,8 +20,15 @@ let toDoList = new Vue({
         },
         markDone: function(item){
             let completeItem = this.itemList.splice(this.itemList.indexOf(item), 1)
-            this.itemList.push(completeItem[0])
+            this.completedList.push(completeItem[0])
         },
+        removeComplete: function(item){
+            this.completedList.splice(this.completedList.indexOf(item), 1)
+        },
+        notDone: function(item){
+            let notDoneItem = this.completedList.splice(this.completedList.indexOf(item), 1)
+            this.itemList.push(notDoneItem[0])
+        }
     }
     
 })

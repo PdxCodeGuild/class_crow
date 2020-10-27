@@ -8,15 +8,36 @@
     <link rel="stylesheet" href="/js/lab-12/lab-12.css">
 </head>
 <body>
+    <h1>Vue To Do List</h1>
     <div id='toDoList'>
         <input type="text" placeholder="add to list" v-model='addToList' v-on:keyup.enter=addToDo()>
-        <ul>
-            <li  v-for='item in itemList'>
+        <ul class='toDo'>
+            <header>To Do</header>
+            <li  v-for='item in itemList' >
+                
                 {{ item }}
-                <button v-on:click=removeToDo(item)>remove</button>
-                <button class='initial' v-bind:class='isComplete'type='checkbox' v-on:click=markDone(item)>complete</button>
+                <button v-on:click=removeToDo(item)>
+                    remove
+                </button>
+                <button type='checkbox' v-on:click=markDone(item) >
+                    complete
+                </button>
                 
             </li>
+        </ul>
+        <ul class='complete'>
+            <header>Complete</header>
+            <li v-for='item in completedList' v-bind:class='{ strikeThrough }'>
+                {{ item }}
+                <button v-on:click=removeComplete(item)>
+                    remove
+                </button>
+                <button v-on:click=notDone(item)>
+                    oops
+                </button>
+
+            </li>
+
         </ul>
     </div>
     <script src="/js/lab-12/lab-12.js"></script>
