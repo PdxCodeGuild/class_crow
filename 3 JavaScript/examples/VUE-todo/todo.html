@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <style>
+            .completed {
+                text-decoration:line-through;
+            }
+            .remove_todo_bt {
+                color:red;
+            }
+            .complete_todo_bt {
+                color:green;
+            }
+            .edit_todo_bt {
+                color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-on:keyup.enter="addNewTodo" v-model="todo"/>
+            <button v-on:click="addNewTodo">add</button>
+            <ol>
+                <li v-for="(todo, index) in todos">
+                    <div v-if="todo.editable">
+                        <span>{{ todo.title }} EDIT</span>
+                        <input type="text" v-model="todo.title" v-on:keyup.enter="todo.editable=!todo.editable"/>
+                        <button v-on:click="todo.editable=!todo.editable">save</button>
+                    </div>
+                    <div v-else>
+                        <div v-if="!todo.completed">
+                            <span>{{ todo.title }}</span>
+                            <button v-on:click="removeTodo(index)" v-on:keyup.enter="remoteTodo(index)" class="remove_todo_bt">✗</button>
+                            <button v-on:click="todo.completed=!todo.completed" class="complete_todo_bt">✓</button>
+                            <button v-on:click="todo.editable=!todo.editable" class="edit_todo_bt">&#9998</button>    
+
+                        </div>
+                        <div v-else>
+                            <span class="completed">{{ todo.title }}</span>
+                            <button v-on:click="removeTodo(index)" v-on:keyup.enter="remoteTodo(index)" class="remove_todo_bt">✗</button>
+                            <button v-on:click="todo.completed=!todo.completed" class="complete_todo_bt">✓</button>             
+                        </div>                        
+                    </div>                    
+
+                </li>
+            </ol>
+        </div>
+        <script src="todo.js"> </script>
+    </body>
+</html>
