@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/js/calculator/calculator.css">
+    <title>Vue Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div class="calculator">
+        <div>
+            <input class="calculator-screen" type="text" placeholder="0" disabled>
+        </div>
+        <div class="calculator-keys">
+            <button class="operator" value="+" v-on:click=sum(numberString)>+</button>
+            <button class="operator" value="-" v-on:click=subtract(numberString)>-</button>
+            <button class="operator" value="*" v-on:click=multiply(numberString)>&times</button>
+            <button class="operator" value="/" v-on:click=divide(numberString)>&divide</button>
+
+            <button value="7" v-on:click=displayNumber(7)>7</button>
+            <button value="8" v-on:click=displayNumber(8)>8</button>
+            <button value="9" v-on:click=displayNumber(9)>9</button>
+
+            <button value="4" v-on:click=displayNumber(4)>4</button>
+            <button value="5" v-on:click=displayNumber(5)>5</button>
+            <button value="3" v-on:click=displayNumber(6)>6</button>
+
+            <button value="1" v-on:click=displayNumber(1)>1</button>
+            <button value="2" v-on:click=displayNumber(2)>2</button>
+            <button value="3" v-on:click=displayNumber(3)>3</button>
+
+            <button value="0">0</button>
+            <button class="equal-sign" value="=" v-on:click=execute(formula)>=</button>
+            <button class="all-clear" value="AC" v-on:click=allClear(formula,numberString)>AC</button>
+            <button value=".">.</button>
+        </div>
+    </div>
+    <script src="/js/calculator/calculator.js"></script>
+</body>
+</html>
