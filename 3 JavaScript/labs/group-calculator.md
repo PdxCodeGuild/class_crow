@@ -3,9 +3,34 @@
 
 Let's build a simple calculator, you may use jQuery and a CSS framework if you'd like. You can find some examples of calculators on [Google](https://www.google.com/search?q=calculator+screenshot&rlz=1C1CHBF_enUS752US752&source=lnms&tbm=isch&sa=X&ved=0ahUKEwie2JG15M3WAhUQ-mMKHUdsCnkQ_AUICigB&biw=1536&bih=772&dpr=1.25). It should support the following functions at minimum.
 
-```
-calculator code here
+```<div class="calculator">
+        <div>
+            <input class="calculator-screen" type="text" placeholder="0" disabled>
+        </div>
+        <div class="calculator-keys">
+            <button class="operator" value="+">+</button>
+            <button class="operator" value="-">-</button>
+            <button class="operator" value="*">&times</button>
+            <button class="operator" value="/">&divide</button>
 
+            <button value="7">7</button>
+            <button value="8">8</button>
+            <button value="9">9</button>
+
+            <button value="4">4</button>
+            <button value="5">5</button>
+            <button value="3">6</button>
+
+            <button value="1">1</button>
+            <button value="2">2</button>
+            <button value="3">3</button>
+
+            <button value="0">0</button>
+            <button class="equal-sign" value="=">=</button>
+            <button class="all-clear" value="AC">AC</button>
+            <button value=".">.</button>
+        </div>
+    </div>
 ```
 
 - 0-9 and . (decimal place)
