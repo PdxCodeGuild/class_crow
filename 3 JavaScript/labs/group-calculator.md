@@ -14,13 +14,7 @@ Add the functionality to the calculator boilerplate provided. Use Vanilla JS or 
 
 You can pick from any of these advanced features.
 
-- `^` (exponentiation)
-- `sin`, `cos`, and `tan`
-- `!` (factorial)
-
 Enable keyboard input.
-
-Use unicode charcters like ÷ and × rather than / and *
 
 Show the ongoing operation above the main calculator screen. E.g. if the user enters `5` and then presses `*`, erase the screen and show `5*` above the main screen. If the user then presses `2` and presses `=`, show `5*2=` above the main screen, and `10` in the main screen.
 
