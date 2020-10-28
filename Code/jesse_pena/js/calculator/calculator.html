@@ -9,9 +9,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
+    <header id='header'>Calculator</header>
     <div class="calculator">
+        
         <div>
-            <input class="calculator-screen" type="text" :placeholder='displayValue' disabled>
+            <input class="calculator-screen" type="text" :placeholder='displayValue' v-model='numberString'>
         </div>
         <div class="calculator-keys">
             <button class="operator" value="+" v-on:click=sum(numberString)>+</button>
@@ -32,9 +34,9 @@
             <button value="3" v-on:click=displayNumber(3)>3</button>
 
             <button value="0" v-on:click=displayNumber(0)>0</button>
-            <button class="equal-sign" value="=" v-on:click=execute(formula)>=</button>
+            <button class="equal-sign" value="=" v-on:click=execute(formula) v-on:keyup.enter=execute(formula)>=</button>
             <button class="all-clear" value="AC" v-on:click=allClear(formula,numberString)>AC</button>
-            <button value=".">.</button>
+            <button value="." v-on:click=addDecimal()>.</button>
         </div>
     </div>
     <script src="/js/calculator/calculator.js"></script>

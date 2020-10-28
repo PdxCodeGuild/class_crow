@@ -14,6 +14,11 @@ let calculator = new Vue({
             this.displayValue += num
             
         },
+        addDecimal: function(){
+            this.numberString += '.'
+            this.displayValue += '.'
+
+        },
         sum: function(numberString){
             this.formula += `${numberString} +`
             // alert(this.formula)
