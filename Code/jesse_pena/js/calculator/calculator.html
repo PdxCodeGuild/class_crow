@@ -13,7 +13,7 @@
     <div class="calculator">
         
         <div>
-            <input class="calculator-screen" type="text" :placeholder='displayValue' v-model='numberString'>
+            <input class="calculator-screen" type="text" :placeholder='displayValue' v-model='numberString' v-on:keyup.enter=execute(formula)>
         </div>
         <div class="calculator-keys">
             <button class="operator" value="+" v-on:click=sum(numberString)>+</button>
