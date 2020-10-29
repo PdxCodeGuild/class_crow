@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="playground">
+    <h1> Hello {{ name }} </h1>
+
+    <ul> 
+        <li> 
+            fav number: 
+            {{ favNumber }}
+        </li>
+        {% for food in favFoods %}
+            <li> food: {{ food }} </li>
+            <div>:)</div>
+        {% endfor %}
+    </ul>
+{%endblock%}
+

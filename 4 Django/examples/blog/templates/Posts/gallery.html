@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if display == False %}
+
+<div>
+    {% for photo in photos %}
+    <img src='{{ photo.url }}' width="500" height="500 alt="{{ photo.alt }}"">
+    {% endfor %}
+</div>
+
+
+{% endif %}
+{% endblock %}
