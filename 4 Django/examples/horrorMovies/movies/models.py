@@ -17,6 +17,6 @@ class Movie(models.Model):
 class Villain(models.Model):
     name = models.CharField(max_length=50)
     movie = models.ForeignKey('Movie', on_delete=models.CASCADE, null=True, blank=True, related_name='Movie')
-
+    image = models.CharField(max_length=400, null=True, blank=True)
     def __str__(self):
         return self.name
