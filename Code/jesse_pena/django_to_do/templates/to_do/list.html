@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div >
+    <h1 >LIST.HTML</h1>
+    <p >IS THIS THING ON?</p>
+   
+    
+    
+  
+  </div>
+{% for item in items %}
+
+  <h1>{{ item.to_do_item }}</h1>
+  <!-- <h2>{{ movie.rating }}</h2> -->
+  
+
+{% endfor %}
+
+
+{% endblock %}
