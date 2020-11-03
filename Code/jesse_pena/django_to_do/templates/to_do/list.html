@@ -11,11 +11,16 @@
   </div>
 {% for item in items %}
 
-  <h1>{{ item.to_do_item }}</h1>
+  <h1>to-do: {{ item.to_do_item }}</h1>
+  <h1>created: {{ item.created_date }}</h1>
+  <h1>item complete: {{ item.completed }}</h1>
   <!-- <h2>{{ movie.rating }}</h2> -->
   
 
 {% endfor %}
+
+
+    
 
 
 {% endblock %}
