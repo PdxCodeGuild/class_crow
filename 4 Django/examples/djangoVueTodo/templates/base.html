@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+    {% if env_name == 'production' %}
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    {% else %}
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    {% endif %}
+    <title>welcome</title>
+</head>
+<body>
+    <div class='container'>
+      <div id="vue-app">
+        <h1>[[ myTitle ]]</h1>
+    {% block content %}
+    {% endblock %}
+    </div>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
