@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">all movies here</h1>
+    <p class="lead">boo !</p>
+   
+    
+    
+  
+  </div>
+{% for movie in movies %}
+
+  <h1>{{ movie.title }}</h1>
+  <h2>{{ movie.rating }}</h2>
+  <a href="http://localhost:8000/add_movie">Add more movies</a>
+
+{% endfor %}
+
+{% for villain in villains %}
+<h1>{{ villain.name }}</h1>
+<img src="{{ villain.image }}" alt="">
+<h2>{{ villain.movie }}</h2>
+<a href="http://localhost:8000/add_villain">Add more villains</a>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>add villain</h1>
+
+<form action="{% url 'add_villain' %}" method='POST'>
+    {% csrf_token %}
+    name: <br> <input type="text" name='name'> <br>
+    image: <br> <input type="text" name='image'> <br>
+
+    <br>
+    <input type="submit" value='add'>
+</form>
+{% endblock %}
