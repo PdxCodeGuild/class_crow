@@ -5,6 +5,9 @@
 <a href="http://localhost:8000/todos/add">add task</a>
 <a href="http://localhost:8000/users/profile">profile</a>
 <a href="http://localhost:8000/accounts/logout">logout</a>
+<a href="http://localhost:8000/todos/all">See All</a>
+
+    <h1>Hello {{ user.username }}</h1>
 
 <form action="{% url 'add' %}" method="POST">
     {% csrf_token %}
