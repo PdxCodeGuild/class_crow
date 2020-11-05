@@ -22,7 +22,7 @@ def add_item(request):
         context = {
             'items': items
         }
-        return render (request, 'list/add_item.html', context)
+        return render (request, 'to_do/add_item.html', context)
     elif request.method == 'POST':
         to_do_item = request.POST['to_do_item']
         # created_date = datetime.now
