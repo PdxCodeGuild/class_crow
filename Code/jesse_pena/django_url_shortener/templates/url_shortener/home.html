@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 >HOME.HTML</h1>
+    <p >THIS IS HOME.HTML</p>
+    <form action="{% url 'home' %}" method='POST'>
+    {% csrf_token %}
+    <input type="text" name='shortened_url'>
+    <input type="submit" value='add'><br>
+
+  {% for url in shorteners %}
+
+  <!-- <h1> {{ url.shortened_url }} </h1> -->
+  <a href="http://{{ url.shortened_url }}"> your_url/{{ url.random_string_database }}</a><br>
+  
+
+  {% endfor %}
+{% endblock %}
