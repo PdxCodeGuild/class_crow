@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Shortener
+# from django.views.generic.detail import DetailView
 
 import string 
 import random
@@ -24,6 +25,7 @@ def home(request):
         return redirect('home')
 
     return render(request, 'url_shortener/home.html')
+    # return redirect()
 
 def list_view(request):
     shorteners = Shortener.objects.all()
@@ -31,3 +33,17 @@ def list_view(request):
         'shorteners': shorteners
     }
     return render(request, 'url_shortener/list.html', context)
+
+def detail_view(request, id):
+    shorteners = Shortener.objects.get(id=id)
+    # context = {
+    #     'shorteners': shorteners,
+    #     # 'random_string': random_string
+    # }
+
+    # context['data'] = Shortener.objects.get(id = id)
+    website = 'http://' + shorteners.shortened_url
+    # console.log(shorteners)
+
+    # return render(request, 'url_shortener/detail_view.html', context)
+    return redirect(website)
