@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='container'>
+    <h3>  Hello {{ user.username }}</h3>
+    {% for url in urls %}
+        {{ url.url }}
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h3>Register Now!</h3>
+<form action="" method="POST">
+    {% csrf_token %}
+    username: <input type="text" name="username"> <br>
+    Password:
+    <input name="password" required="required" type="password" id="password" /><br>
+    Confirm Password:
+    <input name="password_confirm" required="required" type="password" id="password_confirm" oninput="check(this)" /><br>
+    <script language='javascript' type='text/javascript'>
+        function check(input) {
+            if (input.value != document.getElementById('password').value) {
+                input.setCustomValidity('Password Must be Matching.');
+            } else {
+                // input is valid -- reset the error message
+                input.setCustomValidity('');
+            }
+        }
+    </script>
+
+    <input type="submit" value="register" >
+</form>
+</div>
+
+{% endblock %}

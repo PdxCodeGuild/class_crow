@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    <h4>URL Shortener</h4>
+  </div>
+  <div class="row">
+    <div class="six columns">
+      <form id="url-form" action="{% url 'shorten' %}" method="post">
+        {% csrf_token %}
+        <input id="url-input" type="text" name="user_url" placeholder="input url to shorten..." required
+          pattern="https?://.+" oninvalid="this.setCustomValidity('url must begin with http or https')"
+          oninput="this.setCustomValidity('')" />
+        <input id="url-button" type="submit" value="shorten url" />
+      </form>
+    </div>
+  <div class="three columns">
+    <a class="button" id="list-links" href="{% url 'list' %}">view shortened urls</a>
+  </div>
+  <div class="three columns">
+    <a class="button" id="random-link" href="{% url 'random' %}">Take my chances...</a>
+    </div>
+</div>
+  {% for message in messages %}
+  <div id="hash-display">
+    <a href="http://localhost:8000/{{ message.message }}" target="blank">http://localhost:8000/{{ message.message }}</a>
+  </div>
+  {% empty %}
+  <div id="hash-display"></div>
+  {% endfor %}
+</div>
+{% endblock %}
