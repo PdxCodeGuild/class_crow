@@ -18,13 +18,17 @@ def home(request):
         return render (request, 'url_shortener/home.html', context)
     elif request.method == 'POST':
         shortened_url = request.POST['shortened_url']
-        # if Shortener.objects.filter(shorteners.shortened_url).exists():
-        #     shorteners.count += 1
-        new_url = Shortener.objects.create(
-            shortened_url = shortened_url,
-            random_string_database = random_string
+        if Shortener.objects.all().filter(shortened_url = shortened_url).exists():
+        # if shortened_url.exists:
+            singular_url = Shortener.objects.get(shortened_url = shortened_url)
+            singular_url.count = singular_url.count + 1
+            singular_url.save()
+        else:
+            new_url = Shortener.objects.create(
+                shortened_url = shortened_url,
+                random_string_database = random_string
 
-        )
+            )
         return redirect('home')
 
     return render(request, 'url_shortener/home.html')
@@ -42,8 +46,3 @@ def detail_view(request, id):
     website = 'http://' + shorteners.shortened_url
     return redirect(website)
 
-# def counter_view(request, id):
-#     shorteners = Shortener.objects.get(id = id)
-#     if Shortener.objects.filter(shorteners.shortened_url).exists():
-#         shorteners.count += 1
-#     shorteners.save()
