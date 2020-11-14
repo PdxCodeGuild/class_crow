@@ -2,7 +2,8 @@
 
 {% block content %}
 <h1>whatup {{ user.username }}</h1>
+<h4>Your Urls</h4>
     {% for url in urls %}
-        {{ url.url }}
+        {{ url.shortened_url }}
     {% endfor %}
 {% endblock %}

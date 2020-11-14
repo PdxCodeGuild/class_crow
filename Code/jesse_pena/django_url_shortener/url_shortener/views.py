@@ -26,8 +26,8 @@ def home(request):
         else:
             new_url = Shortener.objects.create(
                 shortened_url = shortened_url,
-                random_string_database = random_string
-
+                random_string_database = random_string,
+                user = request.user
             )
         return redirect('home')
 

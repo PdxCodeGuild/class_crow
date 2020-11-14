@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1 >HOME.HTML</h1>
-    <p >THIS IS HOME.HTML</p>
+    <h1 >Shortened urls</h1>
+    
     <form action="{% url 'home' %}" method='POST'>
     {% csrf_token %}
     <input type="text" name='shortened_url'>
@@ -10,12 +10,8 @@
 
   {% for url in shorteners %}
 
-  <!-- <h1> {{ url.shortened_url }} </h1> -->
-  <!-- <a href="http://{{ url.shortened_url }}"> your_url/{{ url.random_string_database }}</a><br> -->
   <a href="http://127.0.0.1:8000/detail/{{ url.id }}"> your_url/{{ url.random_string_database }}</a><br>
-  <!-- <p>{{ url.id }}</p> -->
-  <p>{{ url.count }}</p>
+  <p>URL Count: {{ url.count }}</p>
   
-
   {% endfor %}
 {% endblock %}
