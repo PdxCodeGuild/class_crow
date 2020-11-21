@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script></head>
+<body>
+ {% load static %} 
+    <p>HELLO GREMLINS</p>
+    <div id="app">
+
+        <input type="text" v-model="input_todo_title" placeholder="title" />
+        <input type="text" v-model="input_todo_body" placeholder="body" />
+        <button v-on:click="addTodo">add todo</button>
+
+        <button v-on:click="getToDos">API CALL</button>
+
+        <li v-for="todo in todos">
+            <span>[[ todo.title ]] </span>
+            <span>[[ todo.body ]] </span>
+            <p>TODO</p>
+        </li>
+    </div>
+
+    <script>
+        var app = new Vue({
+            delimiters: ['[[', ']]'],
+            el: '#app',
+            data: {
+                todos: [],
+                input_todo_title: '',
+                input_todo_body: '',
+            },
+            methods: {
+                getToDos: async function(event){
+                    let response = await axios.get('http://localhost:8000/api/');
+                    this.todos = response.data;
+                    this.string = 'STRING';           
+                },
+                <!-- getToDo: async function(event){
+                    let response = await axios.get('http://localhost:8000/api/<id>');
+                    this.todos = response.data;
+                    this.string = 'STRING';           
+                },
+                getDjangoToDos: async function(event){
+                    let response = await axios.get('{% url get_todos %}');
+                    this.todos = response.data;
+                    this.string = 'STRING';           
+                },
+                addTodo: function(){
+                    this.todos.push({
+                        'title': this.input_todo_title,
+                        'body': this.input_todo_body
+                    })
+                } -->
+            }
+        })
+    </script>
+
+</body>
+</html>
