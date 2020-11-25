@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="app">
+        <label for="food">Food:</label>
+        <input name="food"  type="text" v-model="input_food_name" placeholder="name" />
+        <label for="rating">Rate This Food:</label>
+
+        <select name="rating" id="rating" v-model="input_food_rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select> 
+        <button v-on:click="addFood">add food</button>
+
+        <button v-on:click="getFoods">API CALL</button>
+
+        <li v-for="food in foods">
+            <span>[[ food.name ]] </span>
+            <span>[[ food.rating ]] </span>
+        </li>
+    </div>
+
+    <script src="index.js">
+       
+    </script>
+
+</body>
+</html>
