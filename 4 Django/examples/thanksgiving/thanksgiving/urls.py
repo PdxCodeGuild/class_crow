@@ -22,9 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('foodsAPI.urls')),
     path('', include('pages.urls')),
+    # urls for user app:
     url('rest-auth/', include('rest_auth.urls')),
     url('rest-auth/registration/', include('rest_auth.registration.urls')),
     url('account/', include('allauth.urls')),
     url('accounts-rest/registration/account-confirm-email/(?P<key>.+)/$', confirm_email, name='account_confirm_email'),
-
 ]
