@@ -1,6 +1,9 @@
 from django.db import models
 
 # Create your models here.
+
+
+
 class Food(models.Model):
     class Rating(models.IntegerChoices):
         ONE = 1
@@ -14,3 +17,10 @@ class Food(models.Model):
     def __str__(self):
         return self.name
     
+class Ingredient(models.Model):
+    name = models.CharField(max_length=60)
+    for_food = models.ForeignKey(Food, on_delete=models.CASCADE, blank = True, null = True, related_name = 'Food')
+
+    def __str__(self):
+        return self.name
+

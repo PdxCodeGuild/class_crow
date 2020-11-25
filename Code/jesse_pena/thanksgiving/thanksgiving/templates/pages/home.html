@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <body>
+        <div id='app'>
+            <label for="food">Food:</label>
+            <input name='food' type="text" v-model='input_food_name' placeholder='name'/>
+            <label for="rating">Rate this food:</label>
+
+            <select name="rating" id="rating" v-model='input_food_rating'>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button v-on:click='addFood'>Add Food</button>
+            <button v-on:click='getFoods'>API Call</button>
+
+            <li v-fpr='food in foods'>
+                <span>[[ food.name ]]</span>
+                <span>[[ food.rating ]]</span>
+            </li>
+
+        </div>
+    </body>
+{% endblock %}
