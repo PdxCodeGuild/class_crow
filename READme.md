@@ -43,6 +43,14 @@ Thanksgiving -- Nov 26, 2020
 - (04)chirp
 - (05)library 
 
+## Javascript labs assigned
+- (01)pick 3
+- (02)todo
+- (03)redirector 
+- (04)hackertyper
+- (05)bouncing ball 
+
+
 
 ## Odds and Ends
 
