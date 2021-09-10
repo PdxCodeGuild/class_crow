@@ -28,6 +28,13 @@ Thanksgiving -- Nov 26, 2020
 - (13): rot 13
 - (14): pick6 
 - (15): number to phrase
+  
+## HTML labs assigned
+- (01)bio
+- (02)blog
+- (03)magic 8 ball 
+- (04)company home
+- (05) personal portfolio 
 
 
 
