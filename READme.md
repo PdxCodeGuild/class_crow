@@ -36,6 +36,12 @@ Thanksgiving -- Nov 26, 2020
 - (04)company home
 - (05) personal portfolio 
 
+## Django labs assigned
+- (01)Django redo
+- (02)todo
+- (03)blog 
+- (04)chirp
+- (05)library 
 
 
 ## Odds and Ends
